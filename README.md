@@ -85,5 +85,20 @@ This is the place for you to write reflections:
 ### Mandatory (Subscriber) Reflections
 
 #### Reflection Subscriber-1
+1. In the case of this tutorial, RwLock is chosen over Mutex because we expect more read operations than write operations, as it allows multiple threads to read from the shared Vec without blocking each other, unless a write operation is taking place. This makes RwLock more suitable for situations where high read concurrency and low write concurrency are expected.
+
+2. Rust's safety guarantees require that mutable static variables be synchronized explicitly to prevent data races; hence, it does not allow mutating statics directly without synchronization primitives. lazy_static is used to safely create global statics that can be lazily initialized and accessed in a thread-safe manner with synchronization primitives like Mutex or RwLock.
+
+
+
+
+
+
+
+
+
+
+
+
 
 #### Reflection Subscriber-2
