@@ -90,15 +90,12 @@ This is the place for you to write reflections:
 2. Rust's safety guarantees require that mutable static variables be synchronized explicitly to prevent data races; hence, it does not allow mutating statics directly without synchronization primitives. lazy_static is used to safely create global statics that can be lazily initialized and accessed in a thread-safe manner with synchronization primitives like Mutex or RwLock.
 
 
-
-
-
-
-
-
-
-
-
-
-
 #### Reflection Subscriber-2
+
+1. Yes, I have explored some other parts of the code besides those who are mentioned in the tutorial. Here are several parts outside the tutorial I have explored:
+- lib.rs: Serves as the main entry point for library crates, which is similar with Application.java in spring boot farmework or manage.py in django.
+- Rocket.toml :  A configuration file that specifies various settings for the Rocket application. It allows us to configure the behavior of our web application outside of the codebase, similar like settings.py in django.
+
+2. The Observer pattern allows objects to be notified of changes in other objects by "subscribing" to them, making it easy to add new observers without altering the existing system. When scaling to multiple instances of an application, the pattern is extended through a message broker that manages notifications across different instances, allowing new subscribers to be added seamlessly. This ensures the system remains flexible and scalable without tightly coupling components.
+
+3. No, I haven't.
